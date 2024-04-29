@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:tawhida/PagesHome/glycemie.dart';
+import 'package:tawhida/PagesHome/temp.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,7 +33,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 25),
         child: Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -47,7 +49,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 70),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -235,7 +237,10 @@ class HomePage extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          /* Do something here */
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => glycemie()));
                         },
                         child: Container(
                           height: 116,
@@ -277,7 +282,8 @@ class HomePage extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          /* Do something here */
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => tempc()));
                         },
                         child: Container(
                           height: 116,
@@ -293,10 +299,10 @@ class HomePage extends StatelessWidget {
                               )
                             ],
                           ),
-                          child: SizedBox(
+                          child: const SizedBox(
                             height: 45,
                             width: 45,
-                            child: const ImageIcon(
+                            child: ImageIcon(
                               AssetImage("assets/images/TC.png"),
                               color: Color.fromRGBO(31, 128, 195, 1),
                               size: 40,
